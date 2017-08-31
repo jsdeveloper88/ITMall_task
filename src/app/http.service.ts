@@ -7,15 +7,17 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 
 @Injectable()
-export class HttpService{
-  constructor(private http: Http){}
+export class HttpService {
+  constructor(private http: Http) {}
 
-  getData(url): Observable<any>{
+  getData(url): Observable<any> {
     return this.http.get(url)
       .map((resp: Response) => {
         let data = resp.json();
         return data;
       })
-      .catch((error: any) => { return Observable.throw(error);});
+      .catch((error: any) => {
+        return Observable.throw(error);
+      });
   }
 }

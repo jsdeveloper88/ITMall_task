@@ -1,4 +1,4 @@
-export class WeatherData{
+export class WeatherData {
   constructor(
     public name: string,
     public temp: number,
